@@ -1,0 +1,7 @@
+*.db
+.env
+node_modules/
+bun.lock
+yarn.lock
+package-lock.json
+.DS_Store

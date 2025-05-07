@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "bun run src/main.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.12"
+  }
+}
