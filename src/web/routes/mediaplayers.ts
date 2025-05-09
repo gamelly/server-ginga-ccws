@@ -26,7 +26,7 @@ export const post: Handler = async (req, params) => {
   const state_error = validator.checkMediaPlayerTransition(state_old, state_new)
 
   if (state_error) {
-    return HttpResponse.gingaError(state_error + 600)
+    return HttpResponse.gingaError(state_error)
   }
 
   const player_new = mediaplayer[body.action](id, body)
