@@ -37,7 +37,12 @@ export const getOne: Handler = async (req, params) => {
   }
   
   const storage = persistent.load(keyValue!)
-  return HttpResponse.json(transform.PersistentToResponse(storage!));
+
+  if (!storage) {
+    return HttpResponse.json(transform.PersistentListToResponseList([]));
+  }
+
+  return HttpResponse.json(transform.PersistentToResponse(storage));
 };
 
 export const getAll: Handler = async (req) => {
