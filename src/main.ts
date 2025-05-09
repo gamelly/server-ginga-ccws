@@ -10,7 +10,7 @@ addRoute("POST", "/dtv/current-service/ginga/persistent", route_persistent.post)
 addRoute("GET", "/dtv/current-service/ginga/persistent", route_persistent.getAll);
 addRoute("GET", "/dtv/current-service/ginga/persistent/:key", route_persistent.getOne);
 
-addRoute("POST", "/dtv/mediaplayers", route_mediaplayers.post);
+addRoute("POST", "/dtv/mediaplayers/:id", route_mediaplayers.post);
 addRoute("GET", "/dtv/mediaplayers", route_mediaplayers.getAll);
 addRoute("GET", "/dtv/mediaplayers/:id", route_mediaplayers.getOne);
 

@@ -3,19 +3,19 @@ import { getStateFromAction } from "../../domain/transformers/mediaplayer";
 import { db } from "../../infra/db";
 
 function updateState(id: number, value?: MediaPlayerState) {
-  value && db.prepare('UPDATE mediaplayer SET state = ? WHERE id = ?').run(value, id)
+  value !== undefined && db.prepare('UPDATE mediaplayer SET state = ? WHERE id = ?').run(value, id)
 }
 
 function updateUrl(id: number, value?: string) {
-  value && db.prepare('UPDATE mediaplayer SET url = ? WHERE id = ?').run(value, id)
+  value !== undefined && db.prepare('UPDATE mediaplayer SET url = ? WHERE id = ?').run(value, id)
 }
 
 function updatePos(id: number, pos?: MediaPlayerRequest["pos"]) {
-  pos && db.prepare('UPDATE mediaplayer SET pos_x = ?, pos_y = ?, pos_w = ?, pos_h = ? WHERE id = ?').run(pos.x, pos.y, pos.w, pos.h, id)
+  pos !== undefined && db.prepare('UPDATE mediaplayer SET pos_x = ?, pos_y = ?, pos_w = ?, pos_h = ? WHERE id = ?').run(pos.x, pos.y, pos.w, pos.h, id)
 }
 
 function updateTime(id: number, value?: number) {
-  value && db.prepare('UPDATE mediaplayer SET time = ? WHERE id = ?').run(value, id)
+  value !== undefined && db.prepare('UPDATE mediaplayer SET time = ? WHERE id = ?').run(value, id)
 }
 
 export function status(id: number, _body?: MediaPlayerRequest): MediaPlayerRow | null {

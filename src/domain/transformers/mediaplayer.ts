@@ -15,7 +15,9 @@ export function getStateFromAction(action: MediaPlayerAction): MediaPlayerState 
 
 export function MediaPlayerRowToMediaPlayerResponse(row: MediaPlayerRow): MediaPlayerResponse {
   const timestamp = Date.now()
-  const playedtime = timestamp - row.time
+  const currTime = row.time !== 0? timestamp - row.time: 0
+  const duration = row.time !== 0? currTime + 1000: 0
+  const vol = row.time !== 0? 10: 0
   
   return {
     id: row.id,
@@ -27,9 +29,9 @@ export function MediaPlayerRowToMediaPlayerResponse(row: MediaPlayerRow): MediaP
       w: row.pos_w,
       h: row.pos_h
     },
-    vol: 10,
-    duration: playedtime + 1000,
-    currTime: playedtime
+    duration,
+    currTime,
+    vol
   };
 }
 

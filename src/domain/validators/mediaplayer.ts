@@ -44,12 +44,13 @@ const validationSchemaByAction: Record<MediaPlayerAction, ValidationRules> = {
 };
 
 export function checkMediaPlayerTransition(from: MediaPlayerState, to: MediaPlayerState) {
-  return transitions[from]?.includes(to)? HttpGinga.IlegalArgumentValueError: null
+  return !(transitions[to]?.includes(from))? HttpGinga.IlegalArgumentValueError: null
 }
 
-export function checkMediaPlayerBody(action: MediaPlayerAction, body: MediaPlayerRequest) {
+export function checkMediaPlayerBody(body: MediaPlayerRequest) {
+  const action = body.action
   const rules = validationSchemaByAction[action];
-  const required = rules.required ?? [];
+  const required = ['action', ...(rules.required ?? [])];
   const optional = rules.optional ?? [];
   const allowed = new Set([...required, ...optional]);
 
