@@ -18,3 +18,18 @@ db.run(`
     value TEXT
   );
 `);
+
+db.run(`
+  CREATE TABLE IF NOT EXISTS mediaplayer (
+    id INTEGER PRIMARY KEY CHECK(id = 1),
+    state TEXT NOT NULL DEFAULT 'idle',
+    url TEXT NOT NULL DEFAULT '',
+    pos_x INTEGER NOT NULL DEFAULT 0,
+    pos_y INTEGER NOT NULL DEFAULT 0,
+    pos_w INTEGER NOT NULL DEFAULT 0,
+    pos_h INTEGER NOT NULL DEFAULT 0,
+    time INTEGER NOT NULL DEFAULT 0
+  );
+  DELETE FROM mediaplayer WHERE id = 1;
+  INSERT INTO mediaplayer (id) VALUES (1);
+`);
