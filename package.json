@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "build": "bun build src/main.ts --compile --outfile ccws",
     "start": "bun run src/main.ts"
   },
   "devDependencies": {

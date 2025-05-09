@@ -1,5 +1,7 @@
 *.db
 .env
+main
+ccws
 node_modules/
 bun.lock
 yarn.lock
