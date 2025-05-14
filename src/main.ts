@@ -6,7 +6,7 @@ import { logMiddleware } from "./web/middleware/log";
 
 //use(logMiddleware);
 
-addRoute("POST", "/dtv/current-service/ginga/persistent", route_persistent.post);
+addRoute("POST", "/dtv/current-service/ginga/persistent/:key", route_persistent.post);
 addRoute("GET", "/dtv/current-service/ginga/persistent", route_persistent.getAll);
 addRoute("GET", "/dtv/current-service/ginga/persistent/:key", route_persistent.getOne);
 
