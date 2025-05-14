@@ -1,7 +1,7 @@
 <div align="center"><h1>Server Ginga CCWS<br/><sup><sub><sup>Mock ginga web server - ABNT NBR 15606 11</sup></sub></sup></h1></div>
 
 > A mock server for Ginga-based DTVi applications, built to support ABNT NBR 15606-11.
-Ideal for testing interactive digital TV applications in a local environment.
+Ideal for testing interactive digital TV applications in a local environment with [Telemedia Ginga](https://github.com/TeleMidia/ginga) or a **desktop browser**.
 
  * **Default Server URL:** <http://localhost:44642/>
  * **API Documentation:** <https://gly-engine.github.io/site-ginga-ccws>
