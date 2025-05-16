@@ -62,7 +62,7 @@ npm start
 * **Using Docker + Bun**
 
 ```
-docker run --rm -v $(pwd):/app -w /app oven/bun bun start
+docker run --rm -v $(pwd):/app -w /app -p 44642:44642 oven/bun bun start
 ```
 
 ---
